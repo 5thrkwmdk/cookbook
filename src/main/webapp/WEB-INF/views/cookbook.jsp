@@ -1,20 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>요리책</title>
 </head>
 <body>
 
-	<h1>정 쉐프의 요리책</h1>
-	<h2>저자 : 정효진</h2>
+	<h1>${cookbook.name }</h1>
+	<h2>저자 : ${cookbook.writer}</h2>
+	<h2>조리법 목록</h2>
 	<ul>
-		<li>김치찌개[<a href="./김치찌개">바로가기</a>]</li>
-		<li>된장찌개[<a href="./된장찌개">바로가기</a>]</li>
-		<li>페퍼로니 피자[<a href="./페퍼로니 피자">바로가기</a>]</li>
-		<li>양념치킨[<a href="./양념치킨">바로가기</a>]</li>
+		<c:forEach var="recipe" items="${cookbook.recipes}">
+			<li>${recipe.name} [<a href="${ctx}/recipe/${recipe.name}">상세보기</a> ]</li>
+		</c:forEach>
 	</ul>
+	
+	<%-- 상대경로 불안정. 절대 경로 잡아야 함. ctx 설정--%>
+	<a href="${ctx}/recipe/add">조리법 등록</a>
+	
 </body>
 </html>

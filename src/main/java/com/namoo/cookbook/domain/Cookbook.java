@@ -2,7 +2,6 @@ package com.namoo.cookbook.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class Cookbook {
 	// field
@@ -33,8 +32,6 @@ public class Cookbook {
 		}
 		this.recipes.add(recipe);
 	}
-	
-	
 	
 	//--------------------------------------------------------------------------
 	// getter/setter
