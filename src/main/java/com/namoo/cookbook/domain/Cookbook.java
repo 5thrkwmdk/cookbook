@@ -1,13 +1,44 @@
 package com.namoo.cookbook.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class Cookbook {
+	// field
 	
-	private String name = "정 쉐프의 요리책";//cookbook's name
-	private String writer = "정효진";
-	private List<Recipe> recipes;
-	//-----------------------------------------------------------------------------------------------------
+	private String name; // 책이름
+	private String writer; // 저자
+	private List<Recipe> recipes; // 조리법
+	
+	//--------------------------------------------------------------------------
+	// constructor(생성자)
+	
+	public Cookbook() {
+		//
+	}
+	public Cookbook(String name, String writer) {
+		//
+		this.name = name;
+		this.writer = writer;
+	}
+	
+	//--------------------------------------------------------------------------
+	// methods
+	
+	public void addRecipe(Recipe recipe) {
+		//
+		if (this.recipes == null) {
+			this.recipes = new ArrayList<Recipe>();
+		}
+		this.recipes.add(recipe);
+	}
+	
+	
+	
+	//--------------------------------------------------------------------------
+	// getter/setter
+	
 	public String getName() {
 		return name;
 	}
@@ -26,6 +57,4 @@ public class Cookbook {
 	public void setRecipes(List<Recipe> recipes) {
 		this.recipes = recipes;
 	}
-	
-
 }

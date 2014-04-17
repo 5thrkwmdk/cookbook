@@ -1,11 +1,28 @@
 package com.namoo.cookbook.domain;
 
 public class Recipe {
-	//
-	private String name; //cook's name
+	//field
+	
+	private String name; //요리 이름
 	private String ingredients; // 재료 list X. 복잡
-	private String recipe;
-	//------------------------------------------------------------
+	private String procedure; // 조리법
+	
+	//-------------------------------------------------------------------------
+	// constructor
+	
+	public Recipe() {
+		//
+	}
+	public Recipe(String name, String ingredients, String procedure) {
+		//
+		this.name = name;
+		this.ingredients = ingredients;
+		this.procedure = procedure;
+	}
+	
+	//-------------------------------------------------------------------------
+	//getter/setter
+	
 	public String getName() {
 		return name;
 	}
@@ -18,12 +35,10 @@ public class Recipe {
 	public void setIngredients(String ingredients) {
 		this.ingredients = ingredients;
 	}
-	public String getRecipe() {
-		return recipe;
+	public String getProcedure() {
+		return procedure;
 	}
-	public void setRecipe(String recipe) {
-		this.recipe = recipe;
+	public void setProcedure(String procedure) {
+		this.procedure = procedure;
 	}
-	
-
 }

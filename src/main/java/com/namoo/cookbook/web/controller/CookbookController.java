@@ -4,17 +4,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-@RequestMapping("/cookbook")
+import com.namoo.cookbook.domain.Cookbook;
+import com.namoo.cookbook.service.facade.CookbookService;
+
+
+@Controller //controller로 등록
+
 public class CookbookController {
 	//
-//	@Autowired
-//	private Cookbook cookbook;
+
+	private CookbookService cookbookService;
 	
-	@RequestMapping(value = "/chapters")
-	public String chapters() {
+	public ModelAndView cookbook() {
 		//
+		Cookbook cookbook = cookbookService.getCookbook();
 		
-		return "cookbook";
+		return new ModelAndView("/cookbook/cookbook.jsp", "cookbook", cookbook);
 	}
+	
+
 }
