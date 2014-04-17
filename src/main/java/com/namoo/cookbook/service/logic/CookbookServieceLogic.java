@@ -23,7 +23,9 @@ public class CookbookServieceLogic implements CookbookService{
 
 	@Override
 	public void registerRecipe(Recipe recipe) {
-		// TODO Auto-generated method stub
+		// 
+
+		
 		
 	}
 
@@ -41,9 +43,7 @@ public class CookbookServieceLogic implements CookbookService{
 
 	@Override
 	public Recipe getRecipe(String recipeName) {
-		// TODO Auto-generated method stub
-		return null;
+		// 
+		return new Recipe("김치찌개", "김치, 돼지고기", "1. 김치 넣고 끓인다."); 
 	}
-	//
-	
 }
