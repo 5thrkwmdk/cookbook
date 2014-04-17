@@ -15,7 +15,7 @@
 	<h2>조리법 목록</h2>
 	<ul>
 		<c:forEach var="recipe" items="${cookbook.recipes}">
-			<li>${recipe.name} [<a href="${ctx}/recipe/${recipe.name}">상세보기</a> ]</li>
+			<li>${recipe.name} [<a href="${ctx}/recipe/${recipe.name}">상세보기</a>]</li>
 		</c:forEach>
 	</ul>
 	
